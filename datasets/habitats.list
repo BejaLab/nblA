@@ -1,6 +1,4 @@
-oceanic,Marine oceanic,paleturquoise
-coastal,Marine coastal,darkcyan
-brackish,Brackishwater,aquamarine
+marine,Marine,blue
+brackish,Brackishwater,orange
 saline/alkaline,Saline/alkaline lakes,deeppink
-freshwater,Freshwater,skyblue
-terrestrial,Terrestrial,olive
+freshwater/terrestrial,Freshwater/terrestrial,skyblue
