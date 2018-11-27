@@ -1,5 +1,5 @@
-L8AI55	cellular organisms, Bacteria, Terrabacteria group, Cyanobacteria/Melainabacteria group, Cyanobacteria, Synechococcales, Merismopediaceae, Synechocystis, Synechocystis sp. PCC6803
-L8AJF3	cellular organisms, Bacteria, Terrabacteria group, Cyanobacteria/Melainabacteria group, Cyanobacteria, Synechococcales, Merismopediaceae, Synechocystis, Synechocystis sp. PCC6803
+L8AI55	cellular organisms, Bacteria, Terrabacteria group, Cyanobacteria/Melainabacteria group, Cyanobacteria, Synechococcales, Merismopediaceae, Synechocystis, Synechocystis sp. PCC6803 chimera
+L8AJF3	cellular organisms, Bacteria, Terrabacteria group, Cyanobacteria/Melainabacteria group, Cyanobacteria, Synechococcales, Merismopediaceae, Synechocystis, Synechocystis sp. PCC6803 chimera
 A0A2E8E067	Metagenomic assemblies, "Candidatus Poribacteria bacterium"
 A0A2E8RP01	Metagenomic assemblies, "Candidatus Poribacteria bacterium"
 A0A2M8JQY0	Metagenomic assemblies, "Flavobacterium sp."
@@ -26,6 +26,15 @@ A0A2D8XM82	Metagenomic assemblies, "Parvibaculum sp."
 A0A2D5F8A2	Metagenomic assemblies, "Haliea sp."
 A0A2E0B578	Metagenomic assemblies, "Blastopirellula sp."
 A0A2D9KQL6	Metagenomic assemblies, "Rickettsiales bacterium"
+A0A359E2P8	Metagenomic assemblies, "Balneolaceae bacterium"
+A0A2E1FMP7	Metagenomic assemblies, "Crocinitomicaceae bacterium"
+A0A359MBR0	Metagenomic assemblies, "Flavobacteriaceae bacterium"
+A0A350M1X0	Metagenomic assemblies, "Flavobacteriales bacterium"
+A0A2D9KP98	Metagenomic assemblies, "Rickettsiales bacterium"
+A0A2D9C987	Metagenomic assemblies, "Phycisphaerae bacterium"
+A0A2E0ATB0	Metagenomic assemblies, "Blastopirellula sp."
+A0A2E0E997	Metagenomic assemblies, "Propionibacteriaceae bacterium"
+A0A2R7TRJ3	cellular organisms, Bacteria, Terrabacteria group, Cyanobacteria/Melainabacteria group, Cyanobacteria, Synechococcales, Synechococcaceae, Synechococcus, mis-classified fragment "Pseudomonas sp. HMWF031"
 A0A068NZE4	Viruses, Myoviridae, Myoviridae environmental sample
 A0A068NZE6	Viruses, Myoviridae, Myoviridae environmental sample
 A0A068NZF9	Viruses, Myoviridae, Myoviridae environmental sample
