@@ -2,7 +2,7 @@
 mkdir -p datasets
 
 taxonomy() {
-	csvtool -t TAB -u TAB namedcol "Entry,Taxonomic lineage (ALL)" uniprot.tab | tail -n+2 | cat uniprot.tax.override - | tr \\t , | sed -e 's/, /,/g'
+	csvtool -t TAB -u TAB namedcol "Entry,Taxonomic lineage (ALL)" uniprot.tab | tail -n+2 | cat uniprot.tax.override - | tr \\t , | sed -e 's/, /,/g' | grep -vf outliers
 }
 
 cat <<- EOF > datasets/taxonomy1.txt
@@ -44,7 +44,7 @@ cat <<- EOF > datasets/habitats.txt
 	LEGEND_LABELS,$(awk -F, '{print$2}' ORS=, datasets/habitats.list | sed s/,$//)
 	LEGEND_COLORS,$(awk -F, '{print$3}' ORS=, datasets/habitats.list | sed s/,$//)
 	DATA
-	$(awk -F, 'NR==FNR{c[$1]=$3;next} c[$NF]{print $1,c[$NF],$NF}' OFS=, datasets/habitats.list habitats.csv)
+	$(awk -F, 'NR==FNR{c[$1]=$3;next} c[$NF]{print $1,c[$NF],$NF}' OFS=, datasets/habitats.list habitats.csv | grep -vf outliers)
 EOF
 
 cat <<- EOF > datasets/organism.txt
