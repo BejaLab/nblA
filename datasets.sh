@@ -2,7 +2,7 @@
 mkdir -p datasets
 
 taxonomy() {
-	csvtool -t TAB -u TAB namedcol "Entry,Taxonomic lineage (ALL)" uniprot.tab | tail -n+2 | cat uniprot.tax.override - | tr \\t , | sed -e 's/, /,/g' | grep -vf outliers
+	csvtool -t TAB -u TAB namedcol "Entry,Taxonomic lineage (ALL)" uniprot/uniprot.tab | tail -n+2 | cat uniprot/uniprot.tax.override - | tr \\t , | sed -e 's/, /,/g' | grep -vf outliers.txt
 }
 
 cat <<- EOF > datasets/taxonomy1.txt

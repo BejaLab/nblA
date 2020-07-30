@@ -1,6 +1,6 @@
 library(ggplot2)
 
-hmmsearch <- "NF90-pfam.out"
+hmmsearch <- "uniprot/01_NF90-pfam.out"
 nbla  <- read.table(pipe(paste("awk", "'{for(i=24;i<=NF;i++)$23=$23\" \"$i;NF=23}1'", "OFS=\\\\t", hmmsearch)), comment.char = "#", sep = "\t", quote = "")
 interpro <- read.table("NF90-interpro-nbla.tab", sep="\t", quote="", header = T)
 

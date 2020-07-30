@@ -5,23 +5,31 @@ use warnings;
 use Bio::SeqIO;
 use Tree::Interval::Fast;
 
-my ($f1, $f2, $min, $max) = @ARGV;
+my ($f1, $f2, $proteome, $min, $max) = @ARGV;
 
 my $cds = Bio::SeqIO->new(-file => $f1, -format => 'fasta') or die "$!\n";
 my $orf = Bio::SeqIO->new(-file => $f2, -format => 'fasta') or die "$!\n";
 my $out = Bio::SeqIO->new(-fh   => \*STDOUT, -format => 'fasta') or die "$!\n";
 
 my %intervals;
-my ($taxid, $proteome, $classification);
+my $taxid = 0;
+my $classification = "";
+
+my %ids;
 
 while (my $seq = $cds->next_seq) {
 	my ($dna, $id) = split '_', $seq->id;
+
+	while ($ids{$id}) {
+		$id = $id . "X";
+	}
+	$ids{$id} = 1;
+
 	my ($start, $end) = ($seq->description =~ /\[(\d+) - (\d+)\]/);
 	my ($xref) = ($seq->description =~ /xref=([^ ]*)/);
 	my ($product) = ($seq->description =~ /product=([^ ]+)/);
 
 	($taxid) = ($seq->description =~ /taxid=(\d+)/) if not $taxid;
-	($proteome) = ($seq->description =~ /proteome=(UP\d+)/) if not $proteome;
 	($classification) = ($seq->description =~ /classification=([^ ]+)/) if not $classification;
 
 	$intervals{$dna} = Tree::Interval::Fast->new() if not $intervals{$dna};
@@ -39,9 +47,8 @@ while (my $seq = $cds->next_seq) {
 	$desc .= sprintf " product=%s", $product if $product;
 	$seq->description($desc);
 	$out->write_seq($seq);
-}
 
-die "No CDS\n" if not $proteome;
+}
 
 SEQ: while (my $seq = $orf->next_seq) {
 	my ($dna) = split '_', $seq->id;
